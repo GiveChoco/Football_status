@@ -95,8 +95,8 @@ def player_stats(url):
       div_id = div.get('id')
       result = div_id.replace('div_', '')
 
-      specific_table = soup.find('table', id= result)
-
+    specific_table = soup.find('table', id= result)
+    
     if specific_table:
       rows = specific_table.find_all('tr')
 

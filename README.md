@@ -31,3 +31,7 @@ pip install \-r requirements.txt
 4. Run the file
 
 python main.py
+
+# CAUTION
+
+If it rasies an "local variable not defined" error, it is likely that the player is new or has no status to report. 
