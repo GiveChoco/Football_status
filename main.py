@@ -20,8 +20,6 @@ def scrape_the_data(url):
 # Main function 1 - getting the team roaster from fbref website to be accessible for the user
 def squad_details(url):
 
-    import json
-
     soup = scrape_the_data(url)
     #Finding the tbody that contains the player data
     tbody = soup.find('tbody')
@@ -31,7 +29,7 @@ def squad_details(url):
       rows = tbody.find_all('tr')
     else:
       # If no tbody is found, try finding rows directly inside the table
-      rows = soup2.find_all('tr')
+      rows = soup.find_all('tr')
 
     global team_dict
 
@@ -144,19 +142,15 @@ def main():
 
     flag = True
     
-
 # while looop for starting the program when Flag is true
 
     while (flag):
         print("which player would you like to investigate?")
         name = input("Please copy and paste the name from dictionary:  ")
 
-        #player_id, player_name = get_player_id(team_dict, name)
-        #player_name_insert = player_name.replace(" ","-")
-
         name_flag = True
         
-        while name_flag:
+        while (name_flag):
             player_id, player_name = get_player_id(team_dict, name)
             if player_name:
                 player_name_insert = player_name.replace(" ", "-")
